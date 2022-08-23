@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+//1.导入springmvc的jar包
 //2.定义controller  （定义表现层控制器bean）
 //2.1使用@Controller定义bean
 @Controller

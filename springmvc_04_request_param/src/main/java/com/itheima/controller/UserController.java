@@ -30,7 +30,7 @@ public class UserController {
         return "{'module':'common param'}";
     }
 
-    //普通参数：请求参数名与形参名不同时，使用@RequestParam注解关联请求参数名称与形参名称之间的关系
+    //普通参数：请求参数名与形参名不同时，使用@RequestParam注解 关联 请求参数名称与形参名称之间的关系
     @RequestMapping("/commonParamDifferentName")
     @ResponseBody
     public String commonParamDifferentName(@RequestParam("name") String userName , int age){
@@ -63,7 +63,7 @@ public class UserController {
         return "{'module':'array param'}";
     }
 
-    //集合参数：同名请求参数可以使用@RequestParam注解映射到对应名称的集合对象中作为数据
+    //集合参数：同名请求参数可以使用@RequestParam注解  映射到对应名称的  集合对象 中作为数据(重点，重点，重点 加一个@RequestParam注解)
     @RequestMapping("/listParam")
     @ResponseBody
     public String listParam(@RequestParam List<String> likes){
@@ -73,8 +73,10 @@ public class UserController {
 
 
     //集合参数：json格式
-    //1.开启json数据格式的自动转换，在配置类中开启@EnableWebMvc
-    //2.使用@RequestBody注解 将外部传递的json数组数据映射到形参的集合对象中作为数据
+    //1.开启json数据格式的自动转换(在pom.xml中加载jackson坐标)
+    //2.在配置类(SpringMvcConfig)中开启@EnableWebMvc（该功能非常强大，此处仅使用其中一部分功能，即json数据进行自动类型转换）
+    //3.在外部写入json格式的数据（PostMan中写入json数据）
+    //4.使用@RequestBody注解 将外部传递的json数组数据映射到形参的集合对象中作为数据（使用@RequestBody注解，即将 请求体 中所包含的数据传递给请求参数）
     @RequestMapping("/listParamForJson")
     @ResponseBody
     public String listParamForJson(@RequestBody List<String> likes){

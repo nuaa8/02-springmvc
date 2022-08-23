@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * 与springmvc_08_ssm中不同的是，将返回类型改为 Result（这里定义了表现层与前端数据传输协议的定义，是为了给用户提供一些信息）
+ */
+
 //统一每一个控制器方法返回值
 @RestController
 @RequestMapping("/books")

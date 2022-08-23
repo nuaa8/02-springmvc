@@ -35,7 +35,7 @@ public class UserController {
     }
 
     //响应POJO对象
-    //返回值为实体类对象，设置返回值为实体类类型，即可实现返回对应对象的json数据，需要依赖@ResponseBody注解和@EnableWebMvc注解
+    //返回值为实体类对象，设置返回值为实体类类型，即可实现返回对象对应的json数据，需要依赖@ResponseBody注解和@EnableWebMvc注解（重点，重点，重点）
     @RequestMapping("/toJsonPOJO")
     @ResponseBody
     public User toJsonPOJO(){

@@ -5,10 +5,10 @@ import com.itheima.exception.SystemException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-//@RestControllerAdvice用于标识当前类为REST风格对应的异常处理器
+//@RestControllerAdvice 用于标识当前类为REST风格对应的异常处理器
 @RestControllerAdvice
 public class ProjectExceptionAdvice {
-    //@ExceptionHandler用于设置当前处理器类对应的异常类型
+    //@ExceptionHandler 用于设置当前处理器类对应的异常类型（作用：设置指定异常的处理方案，功能等同于控制器方法，出现异常后终止原始控制器执行，并转入当前方法执行）
     @ExceptionHandler(SystemException.class)
     public Result doSystemException(SystemException ex){
         //记录日志
